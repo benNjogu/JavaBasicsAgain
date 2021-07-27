@@ -22,9 +22,6 @@ public class Main {
 			int finalScore = score + (levelCompleted*bonus);
 			System.out.println("Your final score was "+finalScore);
 		}
-		finalScore = 40;/*In this case you cannot access 
-		variables created in the if block because they are 
-		deleted by the computer after it has executed the block*/
 	}
 	
 }
