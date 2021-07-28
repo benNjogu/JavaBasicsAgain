@@ -5,6 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		calculateScore(10000, 8, 200);
+		calculateScore(80, 2, 25);
 		
 	}
 	
