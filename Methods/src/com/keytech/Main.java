@@ -4,8 +4,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		calculateScore(10000, 8, 200);
-		calculateScore(80, 2, 25);
+		int highScore = calculateScore(10000, 8, 200);
+		System.out.println(highScore);
+		
+		highScore = calculateScore(80, 2, 25);
+		System.out.println(highScore);
 		
 	}
 	
@@ -16,7 +19,7 @@ public class Main {
 		
 		if(score!=0) {
 			int finalScore = score + (level*bonus);
-			System.out.println(finalScore);
+			//System.out.println(finalScore);
 			
 			return finalScore;
 		}
