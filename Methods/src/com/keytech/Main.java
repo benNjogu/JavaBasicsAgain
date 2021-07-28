@@ -9,12 +9,18 @@ public class Main {
 		
 	}
 	
-	public static void calculateScore(int score, int level, int bonus) {
+	public static int calculateScore(int score, int level, int bonus) {
 //		int score = 1000;
 //		int levelCompleted = 8;
 //		int bonus = 200;
 		
-		int finalScore = score + (level*bonus);
-		System.out.println(finalScore);
+		if(score!=0) {
+			int finalScore = score + (level*bonus);
+			System.out.println(finalScore);
+			
+			return finalScore;
+		}
+		return 0;
+		
 	}
 }
