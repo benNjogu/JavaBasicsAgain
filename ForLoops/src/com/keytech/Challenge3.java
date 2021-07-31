@@ -23,6 +23,7 @@ public class Challenge3 {
 		
 		}
 		else {
+			//this minimizes number of loops it has to loop
 			for(int i=2;i<=(double)Math.sqrt(n);i++) {
 				if(n%i==0) {
 					return false;
