@@ -9,7 +9,7 @@ public class Challenge3 {
 			if(isPrime(i)) {
 				count++;
 				System.out.println("Number "+i+" is a prime number");
-				if(count==3) {
+				if(count==10) {
 					System.out.println("Exiting for loop");
 					break;
 				}
