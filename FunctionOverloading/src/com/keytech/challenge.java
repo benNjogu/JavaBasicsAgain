@@ -3,7 +3,6 @@ package com.keytech;
 public class challenge {
 
 	public static void main(String[] args) {
-		
 //		double centimeters = calcFeetAndInchesToCentimeters(10, -1);
 //		if (centimeters<0.0) {
 //			System.out.println("Invalid parameters");
