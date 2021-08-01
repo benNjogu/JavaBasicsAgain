@@ -6,7 +6,7 @@ public class Main {
 		int count=0;
 		while(count != 6) {
 			System.out.println("Count value is "+count);
-			count++;
+			//count++;//-->By removing this it becomes an endless loop
 		}
 		System.out.println("****************");
 		count = 1;
