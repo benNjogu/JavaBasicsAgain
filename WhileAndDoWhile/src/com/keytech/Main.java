@@ -19,10 +19,14 @@ public class Main {
 			count++;
 		}
 		System.out.println("****************");//do while
-		count=1;
+		count=6;
 		do {
 			System.out.println("Count value is "+count);
 			count++;
+			if(count>100) {
+				break;
+			}
+			
 		}while(count != 6);
 		
 	}
