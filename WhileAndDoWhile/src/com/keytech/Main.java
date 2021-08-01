@@ -6,9 +6,9 @@ public class Main {
 		int count=0;
 		while(count != 6) {
 			System.out.println("Count value is "+count);
-			//count++;//-->By removing this it becomes an endless loop
+			count++;//-->By removing this it becomes an endless loop
 		}
-		System.out.println("****************");
+		System.out.println("****************");//using break
 		count = 1;
 		while(true) {
 			if(count==6) {
@@ -18,6 +18,13 @@ public class Main {
 			System.out.println("Count value is "+count);
 			count++;
 		}
+		System.out.println("****************");//do while
+		count=1;
+		do {
+			System.out.println("Count value is "+count);
+			count++;
+		}while(count != 6);
+		
 	}
 	
 }
