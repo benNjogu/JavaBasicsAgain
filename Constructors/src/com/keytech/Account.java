@@ -7,9 +7,8 @@ public class Account {
 	private String customerName, email, phoneNumber;
 	
 	public Account() {
-	
-		System.out.println("Empty constructor called!");
-		
+
+		this(56789, 2500, "Default name", "default address", "default phone");
 	}
 	
 	public Account(int accNo, double balance, String customerName, String email, String phoneNumber) {
