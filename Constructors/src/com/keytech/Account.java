@@ -11,6 +11,14 @@ public class Account {
 		System.out.println("Empty constructor called!");
 		
 	}
+	
+	public Account(int accNo, double balance, String customerName, String email, String phoneNumber) {
+		this.accNo = accNo;
+		this.balance = balance;
+		this.customerName = customerName;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+	}
 
 	public int getAccNo() {
 		return accNo;
