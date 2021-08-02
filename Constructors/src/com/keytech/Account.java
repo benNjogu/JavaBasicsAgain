@@ -7,8 +7,7 @@ public class Account {
 	private String customerName, email, phoneNumber;
 	
 	public Account() {
-
-		this(56789, 2500, "Default name", "default address", "default phone");
+		this(56789, 2500, "Default name", "default address", "default phone");//should be the first line
 	}
 	
 	public Account(int accNo, double balance, String customerName, String email, String phoneNumber) {
