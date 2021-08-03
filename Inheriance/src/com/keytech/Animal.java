@@ -61,7 +61,7 @@ public class Animal {
 		System.out.println("Bone tiiiime!!");
 	}
 	
-	public void move() {
-		
+	public void move(int speed) {
+		System.out.println("Animal is moving at "+speed);
 	}
 }
