@@ -70,7 +70,7 @@ public class Account {
 	public void withdraw(double amount) {
 		if (this.balance < 0) {
 			System.out.println("You've got no money...");
-		} else if (this.balance - amount <= 0) {
+		} else if (this.balance - amount < 0) {
 			System.out.println("Not enough money!! Your balance is "+this.balance);
 		} else if (this.balance < amount) {
 			System.out.println("You do not have enough money.\nYour balance is " + this.balance);
