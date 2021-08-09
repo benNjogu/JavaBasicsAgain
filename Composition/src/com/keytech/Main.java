@@ -12,9 +12,7 @@ public class Main {
 		MotherBoard motherBoard = new MotherBoard("BJ-200", "Asus", 4, 6, "v2.44");
 		PC thePc = new PC(theCase, monitor, motherBoard);
 
-		thePc.getTheCase().pressPowerButton();
-		thePc.getMotherBoard().loadProgam("Ubuntu 20.04");
-		thePc.getMonitor().drawPixelAt(1500, 1200, "red");
+		thePc.powerUp();
 		
 	}
 

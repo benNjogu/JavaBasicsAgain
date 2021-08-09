@@ -13,16 +13,14 @@ public class PC {
 		this.motherBoard = motherBoard;
 	}
 
-	public Case getTheCase() {
-		return theCase;
+	public void powerUp() {
+		theCase.pressPowerButton();
+		drawLogo();
 	}
-
-	public Monitor getMonitor() {
-		return monitor;
-	}
-
-	public MotherBoard getMotherBoard() {
-		return motherBoard;
+	
+	private void drawLogo() {
+		//fancy graphics
+		monitor.drawPixelAt(1200, 50, "yellow");
 	}
 	
 }
