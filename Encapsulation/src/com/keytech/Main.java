@@ -16,6 +16,9 @@ public class Main {
 //		player.loseHealth(damage);
 //		System.out.println("Remaining health = "+player.healthRemaining());
 		
+		/*
+		 * Always encapsulate
+		 * */
 
 		EnhancedPlayer player = new EnhancedPlayer("Ben", 1, "AK47");
 		player.loseHealth(5);
