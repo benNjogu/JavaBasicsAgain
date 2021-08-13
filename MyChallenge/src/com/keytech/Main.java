@@ -15,12 +15,15 @@ public class Main {
 		Chain chain = new Chain(167);
 		
 		
-		Bicycle bicycle = new Bicycle(stem, stick, wheels, frame, peddals, seat, flares, chain, size);
-		bicycle.move();
-		String manufacturer = bicycle.manufacturer();
-		System.out.println("Your bicycle manufacturer is " +manufacturer);
-		boolean isComfortable = bicycle.getSeat().isComfortable();
-		System.out.println("Comfort guaranteed:"+isComfortable);
+//		Bicycle bicycle = new Bicycle(stem, stick, wheels, frame, peddals, seat, flares, chain, size);
+//		bicycle.move();
+//		String manufacturer = bicycle.manufacturer();
+//		System.out.println("Your bicycle manufacturer is " +manufacturer);
+//		boolean isComfortable = bicycle.getSeat().isComfortable();
+//		System.out.println("Comfort guaranteed:"+isComfortable);
+		
+		ShockedBicycle shockedBicycle = new ShockedBicycle(stem, stick, wheels, frame, peddals, seat, flares, chain, size, true, true);
+		shockedBicycle.onBumpyRide();
 		
 	}
 	
