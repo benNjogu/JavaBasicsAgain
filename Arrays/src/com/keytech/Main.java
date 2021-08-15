@@ -1,27 +1,42 @@
 package com.keytech;
 
+import java.util.Scanner;
+
 public class Main {
 
+	private static Scanner scanner = new Scanner(System.in);
 	public static void main(String[] args) {
 		
-		int[] myIntArray = new int[10];
-		myIntArray[4] = 48;
-		int number = myIntArray[4];
+		int[] myIntegers = getIntegers(5);
 		
-		//another way to do this 
-		int[] myOtherIntArray = {1,2,3,4,5,6,7,8,9,10};
-		int num = 459874;
+		for(int i=0; i<myIntegers.length; i++) {
+			System.out.println("Element "+i+" typed value was "+myIntegers[i]);
+		}
 		
-		multiplicationTable(myOtherIntArray, num);
 		
+		System.out.println("Average of the five numbers is "+getAverage(myIntegers));
 	}
 	
-	public static void multiplicationTable(int[] array, int num) {
-		for(int i=0; i<=array.length; i++) {
-
-			System.out.println(num +"*"+ i+" = "+num*i);
-			
+	private static int[] getIntegers(int number) {
+		System.out.println("Enter "+number+" integer values.\r");
+		int[] values = new int[number];
+		
+		for(int i=0; i<values.length; i++) {
+			values[i] = scanner.nextInt();
 		}
+		
+		return values;
+	}
+	
+	public static double getAverage(int[] array) {
+		int sum = 0;
+		for(int i=0; i<array.length; i++) {
+			sum += array[i];
+		}
+		
+		double average = sum/array.length;
+		
+		return average;
 	}
 	
 }
