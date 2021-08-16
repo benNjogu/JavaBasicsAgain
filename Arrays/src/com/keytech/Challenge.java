@@ -1,5 +1,6 @@
 package com.keytech;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Challenge {
@@ -30,10 +31,12 @@ public class Challenge {
 	}
 
 	private static int[] sortNumbersArray(int[] numbers) {
-		int[] sortedArray = new int[numbers.length];
-		for(int i=0; i<numbers.length; i++) {
-			sortedArray[i] = numbers[i];
-		}
+//		int[] sortedArray = new int[numbers.length];
+//		for(int i=0; i<numbers.length; i++) {
+//			sortedArray[i] = numbers[i];
+//		}
+		
+		int[] sortedArray = Arrays.copyOf(numbers, numbers.length);
 		
 		boolean flag = true;
 		int temp;
