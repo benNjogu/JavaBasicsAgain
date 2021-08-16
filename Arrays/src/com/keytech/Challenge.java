@@ -18,6 +18,23 @@ public class Challenge {
 		message = "After sorting number at position ";
 		printArray(numbers, message);
 		
+		numbers = resizeArray(numbers);
+		message = "After resizing number at position ";
+		
+		numbers[0] = 1;
+		numbers[1] = 1;
+		numbers[2] = 1;
+		numbers[3] = 1;
+		numbers[4] = 1;
+		numbers[5] = 1;
+		numbers[6] = 1;
+		numbers[7] = 1;
+		numbers[8] = 1;
+		numbers[9] = 1;
+		numbers[10] = 1;
+		numbers[11] = 1;
+		
+		printArray(numbers, message);
 
 	}
 
@@ -31,12 +48,12 @@ public class Challenge {
 	}
 
 	private static int[] sortNumbersArray(int[] numbers) {
-//		int[] sortedArray = new int[numbers.length];
-//		for(int i=0; i<numbers.length; i++) {
-//			sortedArray[i] = numbers[i];
-//		}
+		int[] sortedArray = new int[numbers.length];
+		for(int i=0; i<numbers.length; i++) {
+			sortedArray[i] = numbers[i];
+		}
 		
-		int[] sortedArray = Arrays.copyOf(numbers, numbers.length);
+//		int[] sortedArray = Arrays.copyOf(numbers, numbers.length);
 		
 		boolean flag = true;
 		int temp;
@@ -65,6 +82,18 @@ public class Challenge {
 		}
 
 		return values;
+	}
+	
+	private static int[] resizeArray(int[] numbers) {
+		int[] originalArray = numbers;
+		numbers = new int[12];
+		for(int i=0; i<originalArray.length; i++) {
+			numbers[i] = originalArray[i];
+		}
+		
+		System.out.println("new size of array is "+numbers.length);
+		
+		return numbers;
 	}
 
 }
