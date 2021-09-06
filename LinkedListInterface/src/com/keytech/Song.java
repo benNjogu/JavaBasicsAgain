@@ -1,4 +1,4 @@
-package com.challenge;
+package com.keytech;
 
 public class Song {
 

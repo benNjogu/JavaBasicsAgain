@@ -1,17 +1,16 @@
-package com.challenge;
+package com.keytech;
 
-import java.nio.channels.NonWritableChannelException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
 
-import javax.print.event.PrintJobAttributeListener;
 
 public class Main {
 
-	private static ArrayList<Album> albums = new ArrayList<Album>();
+	private static List<Album> albums = new ArrayList<Album>();
 
 	public static void main(String[] args) {
 
@@ -38,7 +37,7 @@ public class Main {
 
 		albums.add(album);
 
-		LinkedList<Song> playList = new LinkedList<Song>();
+		List<Song> playList = new LinkedList<Song>();
 		albums.get(0).addToPlayList("bed of lies", playList);
 		albums.get(0).addToPlayList("goodbye", playList);
 		albums.get(0).addToPlayList("knock out", playList);
@@ -53,7 +52,7 @@ public class Main {
 
 	}
 
-	private static void play(LinkedList<Song> playList) {
+	private static void play(List<Song> playList) {
 
 		Scanner scanner = new Scanner(System.in);
 		boolean quit = false;
@@ -148,7 +147,7 @@ public class Main {
 
 	}
 
-	private static void printList(LinkedList<Song> playList) {
+	private static void printList(List<Song> playList) {
 		Iterator<Song> iterator = playList.iterator();
 		System.out.println("==========================================");
 		while(iterator.hasNext()) {
