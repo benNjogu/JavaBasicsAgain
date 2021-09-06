@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
+import java.util.Vector;
 
 
 public class Main {
@@ -37,7 +38,7 @@ public class Main {
 
 		albums.add(album);
 
-		List<Song> playList = new LinkedList<Song>();
+		List<Song> playList = new Vector<Song>();
 		albums.get(0).addToPlayList("bed of lies", playList);
 		albums.get(0).addToPlayList("goodbye", playList);
 		albums.get(0).addToPlayList("knock out", playList);
