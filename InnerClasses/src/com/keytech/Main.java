@@ -25,18 +25,26 @@ public class Main {
 		// System.out.println(McLaren.wheelSpeed(3000));
 		//
 
-		class ClickListener implements OnClickListener {
-			public ClickListener() {
-				System.out.println("I've been attached");
-			}
-
+//		class ClickListener implements OnClickListener {
+//			public ClickListener() {
+//				System.out.println("I've been attached");
+//			}
+//
+//			@Override
+//			public void onClick(String title) {
+//				System.out.println(title + " was clicked");
+//			}
+//		}
+//
+//		btnPrint.setOnClickListener(new ClickListener());
+		
+		btnPrint.setOnClickListener(new OnClickListener() {
+			
 			@Override
 			public void onClick(String title) {
 				System.out.println(title + " was clicked");
 			}
-		}
-
-		btnPrint.setOnClickListener(new ClickListener());
+		});
 		listen();
 	}
 
