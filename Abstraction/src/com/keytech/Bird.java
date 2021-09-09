@@ -1,6 +1,6 @@
 package com.keytech;
 
-public class Bird extends Animal{
+public abstract class Bird extends Animal{
 
 	public Bird(String name) {
 		super(name);
@@ -16,6 +16,6 @@ public class Bird extends Animal{
 		System.out.println("breath in, breath out repeat");
 	}
 
-	
+	public abstract void fly();
 	
 }

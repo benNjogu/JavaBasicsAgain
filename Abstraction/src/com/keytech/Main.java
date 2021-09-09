@@ -8,7 +8,7 @@ public class Main {
 		dog.breathe();
 		dog.eat();
 		System.out.println("*********************************");
-		Bird bird = new Bird("Peakcock");
+		Bird bird = new Peakcock("Peakcock");
 		bird.breathe();
 		bird.eat();
 	}
