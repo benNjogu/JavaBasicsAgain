@@ -7,7 +7,10 @@ public class Main {
 		Dog dog = new Dog("chihuahua");
 		dog.breathe();
 		dog.eat();
-		
+		System.out.println("*********************************");
+		Bird bird = new Bird("Peakcock");
+		bird.breathe();
+		bird.eat();
 	}
 	
 }
