@@ -7,9 +7,15 @@ public class Main {
 		animal.breathe();
 		animal.eat();
 		System.out.println("*********************************");
-		animal = new Peakcock("Peakcock");
-		animal.breathe();
-		animal.eat();
+		Peakcock peakcock = new Peakcock("Pink Peakcock");
+		peakcock.breathe();
+		peakcock.eat();
+		peakcock.fly();
+		System.out.println("*********************************");
+		Penguin penguin = new Penguin("Emperor");
+		penguin.breathe();
+		penguin.eat();
+		penguin.fly();
 	}
 	
 }
