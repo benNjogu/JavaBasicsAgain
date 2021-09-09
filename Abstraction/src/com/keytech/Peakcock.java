@@ -6,9 +6,4 @@ public class Peakcock extends Bird{
 		super(name);
 	}
 
-	@Override
-	public void fly() {
-		System.out.println("Displayer of beauty on flight");
-	}
-	
 }
