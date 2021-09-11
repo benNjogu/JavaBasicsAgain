@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		MyLinkedList list = new MyLinkedList(null);
+		SearchTree tree = new SearchTree(null);
 		//list.traverse(list.getRoot());
 		
 		//String stringData = "Murang'a Kenol Thika Nairobi Uthiru Limuru Kijabe Naivasha Gilgil Lanet Nakuru Murang'a";
@@ -12,26 +12,26 @@ public class Main {
 		String[] data = stringData.split(" ");
 		for (String s : data) {
 			//create a new item
-			list.addItem(new Node(s));
+			tree.addItem(new Node(s));
 		}
-		list.traverse(list.getRoot());
-		list.removeItem(new Node("3"));
-		
-		list.traverse(list.getRoot());
-		list.removeItem(new Node("8"));
-		list.removeItem(new Node("7"));
-		list.traverse(list.getRoot());
-		
-		list.removeItem(new Node("0"));
-		list.removeItem(new Node("4"));
-		list.removeItem(new Node("6"));
-		list.removeItem(new Node("2"));
-		list.traverse(list.getRoot());
-
-		list.removeItem(new Node("1"));
-		list.traverse(list.getRoot());
-		list.removeItem(list.getRoot());
-		list.traverse(list.getRoot());
+		tree.traverse(tree.getRoot());
+//		tree.removeItem(new Node("3"));
+//		
+//		tree.traverse(tree.getRoot());
+//		tree.removeItem(new Node("8"));
+//		tree.removeItem(new Node("7"));
+//		tree.traverse(tree.getRoot());
+//		
+//		tree.removeItem(new Node("0"));
+//		tree.removeItem(new Node("4"));
+//		tree.removeItem(new Node("6"));
+//		tree.removeItem(new Node("2"));
+//		tree.traverse(tree.getRoot());
+//
+//		tree.removeItem(new Node("1"));
+//		tree.traverse(tree.getRoot());
+//		tree.removeItem(tree.getRoot());
+//		tree.traverse(tree.getRoot());
 	}
 	
 }
