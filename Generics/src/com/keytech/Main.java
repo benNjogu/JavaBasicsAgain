@@ -1,12 +1,11 @@
 package com.keytech;
 
-import java.awt.print.Printable;
 import java.util.ArrayList;
 
 public class Main {
 
 	public static void main(String[] args) {
-		ArrayList items = new ArrayList<>();
+		ArrayList<Integer> items = new ArrayList<Integer>();
 		items.add(1);
 		items.add(3);
 		items.add(5);
@@ -17,10 +16,10 @@ public class Main {
 		
 	}
 
-	private static void PrintDoubled(ArrayList items) {
+	private static void PrintDoubled(ArrayList<Integer> items) {
 
-		for(Object i : items) {
-			System.out.println((Integer)i * 2);
+		for(int i : items) {
+			System.out.println(i * 2);
 		}
 	}
 	
