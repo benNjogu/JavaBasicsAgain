@@ -2,7 +2,7 @@ package com.keytech;
 
 import java.util.ArrayList;
 
-public class Team {
+public class Team<T> {
 
 	private String name;
 	int played = 0;
@@ -10,7 +10,7 @@ public class Team {
 	int lost = 0;
 	int tied = 0;
 
-	private ArrayList<Player> members = new ArrayList<>();
+	private ArrayList<T> members = new ArrayList<>();
 
 	public Team(String name) {
 		super();
@@ -21,13 +21,13 @@ public class Team {
 		return name;
 	}
 
-	public boolean addPlayer(Player player) {
+	public boolean addPlayer(T player) {
 		if (members.contains(player)) {
-			System.out.println(player.getName() + " is already on the team");
+			System.out.println(((Player)player).getName() + " is already on the team");
 			return false;
 		} else {
 			members.add(player);
-			System.out.println(player.getName() + " picked for item " + this.name);
+			System.out.println(((Player)player).getName() + " picked for " + this.name);
 			return true;
 		}
 	}

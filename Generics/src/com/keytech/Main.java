@@ -1,7 +1,5 @@
 package com.keytech;
 
-import java.util.ArrayList;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -9,13 +7,20 @@ public class Main {
 		SoccerPlayer joe = new SoccerPlayer("Joe");
 		VolleyBallPlayer wacu = new VolleyBallPlayer("Wacu");
 		RugbyPlayer odongo = new RugbyPlayer("Odongo");
+		RugbyPlayer njogu = new RugbyPlayer("Njogu");
 		
-		Team kogalo = new Team("Kogalo");
+		Team<SoccerPlayer> kogalo = new Team<>("Kogalo");
 		kogalo.addPlayer(joe);
-		kogalo.addPlayer(wacu);
-		kogalo.addPlayer(odongo);
+		//kogalo.addPlayer(wacu);
+		//kogalo.addPlayer(odongo);
 		
 		System.out.println(kogalo.numPlayers());
+		
+		Team<RugbyPlayer> rTeam = new Team<>("Kenya 7s");
+		rTeam.addPlayer(odongo);
+		rTeam.addPlayer(njogu);
+		
+		System.out.println(rTeam.numPlayers());
 		
 	}
 	
