@@ -9,7 +9,7 @@ public class Main {
 		kogalo.addPlayer(joe);
 		System.out.println(kogalo.numPlayers());
 		
-		Team<VolleyBallPlayer> vTeam = new Team<>("Kenya Queen");
+		Team<VolleyBallPlayer> vTeam = new Team<>("Kenya Queens");
 		VolleyBallPlayer wacu = new VolleyBallPlayer("Wacu");
 		vTeam.addPlayer(wacu);
 		System.out.println(vTeam.numPlayers());
@@ -35,15 +35,21 @@ public class Main {
 		njiiri.addPlayer(ron);
 		System.out.println(njiiri.numPlayers());
 		
-		
-		mangu.matchResult(bush, 13, 11);
-		mangu.matchResult(njiiri, 12, 17);
+		mangu.matchResult(bush, 11, 11);
+		mangu.matchResult(njiiri, 12, 12);
 		
 		njiiri.matchResult(bush, 24, 21);
 		njiiri.matchResult(mangu, 19, 12);
 		
-		njiiri.ranking();
+		System.out.println("\nRankings");
+		System.out.println(njiiri.getName()+" : "+njiiri.ranking());
+		System.out.println(bush.getName()+" : "+bush.ranking());
+		System.out.println(mangu.getName()+" : "+mangu.ranking());
+		System.out.println(vTeam.getName()+" : "+vTeam.ranking());
 		
+		System.out.println(njiiri.compareTo(bush));
+		System.out.println(njiiri.compareTo(mangu));
+		System.out.println(mangu.compareTo(njiiri));
 		
 	}
 	
