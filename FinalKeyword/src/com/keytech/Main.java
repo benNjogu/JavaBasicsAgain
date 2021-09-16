@@ -12,10 +12,23 @@ public class Main {
 //		System.out.println(two.getInstanceNumber());
 //		System.out.println(three.getInstanceNumber());
 		
-		int pw = 674312;
-		Password password = new ExtendedPassword(pw);
-		password.storePassword();
-		password.letMeIn(pw);
+//		int pw = 674312;
+//		Password password = new ExtendedPassword(pw);
+//		password.storePassword();
+//		password.letMeIn(pw);
+		
+		System.out.println("Main method called");
+		SIBTest sibTest = new SIBTest();
+		sibTest.someMethod();
+		System.out.println("Owner is "+sibTest.owner);
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
