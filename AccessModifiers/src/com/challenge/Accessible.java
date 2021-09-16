@@ -2,10 +2,9 @@ package com.challenge;
 
 interface Accessible {//-->package-private
 
-	int SOME_CONSTANT = 100;//-->package-private
+	int SOME_CONSTANT = 100;//-->public
 	public void methodA();//-->throughout the package
-	void methodB();//-->package-private 
-	boolean methodC();//-->pakage-private
+	void methodB();//--> public
+	boolean methodC();//-->public
 	
-	//total score = 1/5
 }
