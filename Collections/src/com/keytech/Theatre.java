@@ -3,6 +3,7 @@ package com.keytech;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -12,6 +13,19 @@ public class Theatre {
 
 	private final String theatreName;
 	public List<Seat> seats = new ArrayList<>();
+	static final Comparator<Seat> PRICE_ORDER = new Comparator<Theatre.Seat>() {
+
+		@Override
+		public int compare(Seat seat1, Seat seat2) { 
+			if (seat1.getPrice() < seat2.getPrice()) {
+				return -1;
+			}else if (seat1.getPrice() > seat2.getPrice()) {
+				return 1;
+			}else {
+				return 0;
+			}
+		}
+	};
 
 	public Theatre(String theatreName, int numRows, int seatPerRow) {
 		this.theatreName = theatreName;
@@ -40,34 +54,16 @@ public class Theatre {
 		Seat requestedSeat = new Seat(seatNumber, 0);
 		int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
 		if (foundSeat>=0) {
-//			System.out.print(".");
 			return seats.get(foundSeat).reserve();
 		}else {
 			System.out.println("There is no seat "+seatNumber);
 			return false;
 		}
 		
-//		for (Seat seat : seats) {
-//			System.out.print(".");
-//			if (seat.getSeatNumber().equals(seatNumber)) {
-//				requestedSeat = seat;
-//				break;
-//			}
-//		}
-//
-//		if (requestedSeat == null) {
-//			System.out.println("There is no seat " + seatNumber);
-//			return false;
-//		}
-//
-//		return requestedSeat.reserve();
 	}
 
 	// for testing
 	public Collection<Seat> getSeats() {
-//		for (Seat seat : seats) {
-//			System.out.println(seat.getSeatNumber());
-//		}
 		return seats;
 		
 	}
