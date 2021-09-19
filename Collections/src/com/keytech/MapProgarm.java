@@ -25,8 +25,18 @@ public class MapProgarm {
 
 		System.out.println("============================================================================");
 
+		//languages.remove("Lisp");
+		if (languages.remove("Algol", "A member of algorithmic languages")) {
+			System.out.println("Algol removed");
+		} else {
+			System.out.println("Algol not removed, key/value pair not found");
+		}
+
+		System.out.println(languages.replace("Lisp", "A functional programing language with imperative features"));
+		System.out.println(languages.replace("scala", "This wont be added"));
+
 		for (String key : languages.keySet()) {
-			System.out.println(key+" : "+languages.get(key));
+			System.out.println(key + " : " + languages.get(key));
 		}
 
 	}
