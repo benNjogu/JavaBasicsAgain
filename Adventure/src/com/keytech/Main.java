@@ -43,31 +43,42 @@ public class Main {
 		
 
 		int loc = 1;
-		while (true) {
-			System.out.println(locations.get(loc).getDescription());
-			if (loc == 0) {
-				break;
-			}
-
-			Map<String, Integer> exits = locations.get(loc).getExits();
-			System.out.print("Available exits are ");
-			for (String exit : exits.keySet()) {
-				System.out.print(exit+", ");
-			}
-			System.out.println();
-			
-			String direction = scanner.nextLine().toUpperCase();
-			
-			if (exits.containsKey(direction)) {
-
-				loc = exits.get(direction);
-			}else {
-
-				System.out.println("You cannot go in that direction");
-			}
-			
+//		while (true) {
+//			System.out.println(locations.get(loc).getDescription());
+//			if (loc == 0) {
+//				break;
+//			}
+//
+//			Map<String, Integer> exits = locations.get(loc).getExits();
+//			System.out.print("Available exits are ");
+//			for (String exit : exits.keySet()) {
+//				System.out.print(exit+", ");
+//			}
+//			System.out.println();
+//			
+//			String direction = scanner.nextLine().toUpperCase();
+//			
+//			if (exits.containsKey(direction)) {
+//
+//				loc = exits.get(direction);
+//			}else {
+//
+//				System.out.println("You cannot go in that direction");
+//			}
+//			
+//		}
+		
+		String[] road = "You are standing at the end of the road before a small brick building".split(" ");
+		for (String i : road) {
+			System.out.println(i);
 		}
-
+		System.out.println("===================================================================");
+		
+		String[] building = "You are inside a building, a well house for a small spring".split(", ");
+		for (String i : building) {
+			System.out.println(i);
+		}
+		
 	}
 
 }
