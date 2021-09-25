@@ -38,7 +38,7 @@ public class Main {
 		tempExit = new HashMap<String,Integer>();
 		tempExit.put("S", 1);
 		tempExit.put("W", 2);
-		locations.put(5, new Location(5, "You are conversing with friends", tempExit));
+		locations.put(5, new Location(5, "You are conversing with friends", null));
 		
 		Map<String, String> vocabulary = new HashMap<String, String>();
 		vocabulary.put("QUIT", "Q");
