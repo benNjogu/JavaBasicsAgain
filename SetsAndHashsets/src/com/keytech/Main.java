@@ -78,7 +78,17 @@ public class Main {
 		HeavenlyBody body = solarSystem.get("mars");
 		System.out.println("moons of "+body.getName());
 		for (HeavenlyBody moonss: body.getSatellites()) {
-			System.out.println(moonss.getName());
+			System.out.println("\t"+moonss.getName());
+		}
+		
+		Set<HeavenlyBody> moons = new HashSet<>();
+		for(HeavenlyBody planet:planets) {
+			moons.addAll(planet.getSatellites());
+		}
+		
+		System.out.println("All moons ");
+		for (HeavenlyBody moon : moons) {
+			System.out.println("\t"+moon.getName());
 		}
 		
 	}
