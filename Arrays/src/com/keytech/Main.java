@@ -14,7 +14,7 @@ public class Main {
 		}
 		
 		
-		System.out.println("Average of the five numbers is "+getAverage(myIntegers));
+		System.out.println("Average of the five numbers is "+getAverage(myIntegers, tempExit));
 	}
 	
 	private static int[] getIntegers(int number) {

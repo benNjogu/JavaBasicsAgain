@@ -16,13 +16,13 @@ public class Main {
 		// McLaren.operateClutch(true);
 		// McLaren.changeGear(1);
 		// McLaren.operateClutch(false);
-		// System.out.println(McLaren.wheelSpeed(1000));
+		// System.out.println(McLaren.wheelSpeed(1000, tempExit));
 		// McLaren.changeGear(2);
-		// System.out.println(McLaren.wheelSpeed(3000));
+		// System.out.println(McLaren.wheelSpeed(3000, tempExit));
 		// McLaren.operateClutch(true);
 		// McLaren.changeGear(2);
 		// McLaren.operateClutch(false);
-		// System.out.println(McLaren.wheelSpeed(3000));
+		// System.out.println(McLaren.wheelSpeed(3000, tempExit));
 		//
 
 //		class ClickListener implements OnClickListener {
@@ -36,7 +36,7 @@ public class Main {
 //			}
 //		}
 //
-//		btnPrint.setOnClickListener(new ClickListener());
+//		btnPrint.setOnClickListener(new ClickListener(, tempExit));
 		
 		btnPrint.setOnClickListener(new OnClickListener() {
 			

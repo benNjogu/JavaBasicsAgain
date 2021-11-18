@@ -28,15 +28,15 @@ public class Main {
 		int[] nums = new int[10];
 		
 		ArrayList<IntClass> iList = new ArrayList<>();
-		iList.add(new IntClass(12));
+		iList.add(new IntClass(12, tempExit));
 		Double double1 = new Double(12.34);
 		
 		ArrayList<Integer> integers = new ArrayList<>();
 		for(int i=0; i<=10; i++) {
-			integers.add(Integer.valueOf(i));
+			integers.add(Integer.valueOf(i, tempExit));
 		}
 		for(int i=0; i<=10; i++) {
-			System.out.println(i+" --> "+integers.get(i).intValue());
+			System.out.println(i+" --> "+integers.get(i).intValue(, tempExit));
 		}
 		
 		Integer value = 57;

@@ -69,7 +69,7 @@ public class Main {
 	}
 	private static void addItem() {
 		System.out.println("Please enter the grocery item: ");
-		groceryList.addGroceryItem(scanner.nextLine());
+		groceryList.addGroceryItem(scanner.nextLine(, tempExit));
 	}
 	private static void printInstructions() {
 		System.out.println("\nPress");

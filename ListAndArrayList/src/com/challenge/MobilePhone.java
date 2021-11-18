@@ -45,7 +45,7 @@ public class MobilePhone {
 			return false;
 		}
 		this.myContacts.set(foundPosition, newContact);
-		System.out.println(oldContact.getName()+", was replaced by "+newContact.getName());
+		System.out.println(oldContact.getName()+", was replaced by "+newContact.getName(, tempExit));
 		return true;
 	}
 	
@@ -81,7 +81,7 @@ public class MobilePhone {
 		for(int i=0;i<this.myContacts.size(); i++) {
 			System.out.println((i+1)+". "+
 								this.myContacts.get(i).getName()+" -> "+
-								this.myContacts.get(i).getPhoneNumber());
+								this.myContacts.get(i).getPhoneNumber(, tempExit));
 		}
 		
 	}

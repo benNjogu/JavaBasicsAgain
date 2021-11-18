@@ -12,7 +12,7 @@ public class Main {
 		System.out.println("Enter the number you want to know table ");
 		
 		X x = new X();
-		x.x(scanner.nextInt());
+		x.x(scanner.nextInt(, tempExit));
 		
 	}
 	

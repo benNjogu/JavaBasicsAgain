@@ -27,7 +27,7 @@ public class Mercidez extends Car{
 		}
 		
 		if (newVelocity>0) {
-			changeVelocity(newVelocity, getCurrentDirection());
+			changeVelocity(newVelocity, getCurrentDirection(, tempExit));
 		}
 	}
 }

@@ -8,9 +8,9 @@ public class Main {
 //		SomeClass two = new SomeClass("two");
 //		SomeClass three = new SomeClass("three");
 //		
-//		System.out.println(one.getInstanceNumber());
-//		System.out.println(two.getInstanceNumber());
-//		System.out.println(three.getInstanceNumber());
+//		System.out.println(one.getInstanceNumber(, tempExit));
+//		System.out.println(two.getInstanceNumber(, tempExit));
+//		System.out.println(three.getInstanceNumber(, tempExit));
 		
 //		int pw = 674312;
 //		Password password = new ExtendedPassword(pw);

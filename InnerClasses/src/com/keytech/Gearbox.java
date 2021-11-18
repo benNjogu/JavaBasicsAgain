@@ -27,7 +27,7 @@ public class Gearbox {
 
 	public void addGear(int number, double ratio) {
 		if ((number > 0) && (number <= maxGears)) {
-			this.gears.add(new Gear(number, ratio));
+			this.gears.add(new Gear(number, ratio, tempExit));
 		}
 	}
 

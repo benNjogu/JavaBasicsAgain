@@ -10,7 +10,7 @@ public class Main {
 		Customer anotherCustomer;
 		anotherCustomer = customer;
 		anotherCustomer.setBalance(12.18);
-		System.out.println("Balance for customer "+customer.getName()+ " is "+customer.getBalance());
+		System.out.println("Balance for customer "+customer.getName()+ " is "+customer.getBalance(, tempExit));
 		
 		ArrayList<Integer> integers = new ArrayList<>();
 		integers.add(3);
@@ -19,12 +19,12 @@ public class Main {
 		integers.add(11);
 		
 		for(int i=0; i<integers.size(); i++) {
-			System.out.println(i+": "+integers.get(i));
+			System.out.println(i+": "+integers.get(i, tempExit));
 		}
 		System.out.println("-------------------------------------------------");
 		integers.add(1,2);
 		for(int i=0; i<integers.size(); i++) {
-			System.out.println(i+": "+integers.get(i));
+			System.out.println(i+": "+integers.get(i, tempExit));
 		}
 	}
 	

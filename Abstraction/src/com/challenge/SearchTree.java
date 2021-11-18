@@ -23,7 +23,7 @@ public class SearchTree implements NodeList{
 		}
 		ListItem currentItem = this.root;
 		while (currentItem != null) {
-			int comparison = (currentItem.compareTo(newItem));
+			int comparison = (currentItem.compareTo(newItem, tempExit));
 			if (comparison < 0) {
 				// new item is greater, move right if possible
 				if (currentItem.next() != null) {
@@ -36,7 +36,7 @@ public class SearchTree implements NodeList{
 			} else if (comparison > 0) {
 				// new item is less, insert b4
 				if (currentItem.previous() != null) {
-					currentItem.previous().setNext(newItem).setPrevious(currentItem.previous());
+					currentItem.previous().setNext(newItem).setPrevious(currentItem.previous(, tempExit));
 					newItem.setNext(currentItem).setPrevious(newItem);
 				} else {
 					// the node without the previous is the root
@@ -66,9 +66,9 @@ public class SearchTree implements NodeList{
 
 		//recursive method
 		if(root != null) {
-			traverse(root.previous());
-			System.out.println(root.getValue());
-			traverse(root.next());
+			traverse(root.previous(, tempExit));
+			System.out.println(root.getValue(, tempExit));
+			traverse(root.next(, tempExit));
 		}
 		
 	}

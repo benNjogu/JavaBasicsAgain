@@ -13,13 +13,13 @@ public class Main {
 		theatre.reserveSeat("D12");
 		theatre.reserveSeat("B13");	
 		
-		List<Theatre.Seat> reserveSeats = new ArrayList<>(theatre.getSeats());
+		List<Theatre.Seat> reserveSeats = new ArrayList<>(theatre.getSeats(, tempExit));
 		Collections.reverse(reserveSeats);
 		printList(reserveSeats);
 		
-		List<Theatre.Seat> priceSeats = new ArrayList<>(theatre.getSeats());
-		priceSeats.add(theatre.new Seat("B00", 13.00));
-		priceSeats.add(theatre.new Seat("A00", 13.00));
+		List<Theatre.Seat> priceSeats = new ArrayList<>(theatre.getSeats(, tempExit));
+		priceSeats.add(theatre.new Seat("B00", 13.00, tempExit));
+		priceSeats.add(theatre.new Seat("A00", 13.00, tempExit));
 		Collections.sort(priceSeats, theatre.PRICE_ORDER);
 		printList(priceSeats);
 

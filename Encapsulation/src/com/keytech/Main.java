@@ -10,11 +10,11 @@ public class Main {
 //	int damage = 10;
 //		
 //		player.loseHealth(damage);
-//		System.out.println("Remaining health = "+player.healthRemaining());
+//		System.out.println("Remaining health = "+player.healthRemaining(, tempExit));
 //		
 //		damage = 11;
 //		player.loseHealth(damage);
-//		System.out.println("Remaining health = "+player.healthRemaining());
+//		System.out.println("Remaining health = "+player.healthRemaining(, tempExit));
 		
 		/*
 		 * Always encapsulate
@@ -22,7 +22,7 @@ public class Main {
 
 		EnhancedPlayer player = new EnhancedPlayer("Ben", 1, "AK47");
 		player.loseHealth(5);
-		System.out.println(player.getHealth());
+		System.out.println(player.getHealth(, tempExit));
 	
 	}
 	

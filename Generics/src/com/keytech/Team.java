@@ -52,7 +52,7 @@ public class Team<T extends Player> implements Comparable<Team<T>>{
 		}
 		played++;
 		if (opponent != null) {
-			System.out.println(this.getName()+message+opponent.getName());
+			System.out.println(this.getName()+message+opponent.getName(, tempExit));
 			opponent.matchResult(null, ourScore, theirScore);
 		}
 	}

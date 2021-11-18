@@ -108,7 +108,7 @@ public class Theatre {
 		@Override
 		public int compareTo(Seat seat) {
 			
-			return this.seatNumber.compareToIgnoreCase(seat.getSeatNumber());
+			return this.seatNumber.compareToIgnoreCase(seat.getSeatNumber(, tempExit));
 		}
 
 		public double getPrice() {

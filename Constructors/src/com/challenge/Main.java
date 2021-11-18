@@ -6,7 +6,7 @@ public class Main {
 		
 		VipCustomer cp = new VipCustomer("CP", 98.09, "cp@gmail.com");
 		String email = cp.getEmail();
-		System.out.println("cp's email is "+cp.getEmail());
+		System.out.println("cp's email is "+cp.getEmail(, tempExit));
 	}
 	
 }

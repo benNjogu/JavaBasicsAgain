@@ -32,7 +32,7 @@ public class Demo {
 	private static void printList(LinkedList<String> placesToVisit) {
 		Iterator<String> i = placesToVisit.iterator();
 		while (i.hasNext()) {
-			System.out.println("Now visiting " + i.next());
+			System.out.println("Now visiting " + i.next(, tempExit));
 		}
 		System.out.println("===========================");
 	}
@@ -70,7 +70,7 @@ public class Demo {
 			System.out.println("No cities in the itenerary");
 			return;
 		} else {
-			System.out.println("Now visiting " + listIterator.next());
+			System.out.println("Now visiting " + listIterator.next(, tempExit));
 			printMenu();
 		}
 		while (!quit) {
@@ -89,7 +89,7 @@ public class Demo {
 					goingForward = true;
 				}
 				if (listIterator.hasNext()) {
-					System.out.println("Now visiting " + listIterator.next());
+					System.out.println("Now visiting " + listIterator.next(, tempExit));
 				}else {
 					System.out.println("Reached the end of the list");
 					goingForward = false;
@@ -103,7 +103,7 @@ public class Demo {
 					goingForward = false;
 				}
 				if(listIterator.hasPrevious()) {
-					System.out.println("Now visiting "+listIterator.previous());
+					System.out.println("Now visiting "+listIterator.previous(, tempExit));
 				}else {
 					System.out.println("We are at the start of our list");
 					goingForward = true;

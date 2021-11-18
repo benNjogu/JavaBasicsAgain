@@ -31,7 +31,7 @@ public class Node extends ListItem{
 	@Override
 	int compareTo(ListItem item) {
 		if(item != null) {
-			return ((String) super.getValue()).compareTo((String)item.getValue());
+			return ((String) super.getValue()).compareTo((String)item.getValue(, tempExit));
 		}else {
 			return -1;
 		}

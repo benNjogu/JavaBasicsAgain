@@ -12,7 +12,7 @@ public class Main {
 		kimsAccount.deposit(-20);
 		kimsAccount.calculateBalance();
 		
-		System.out.println("Balance on account is "+kimsAccount.getBalance());
+		System.out.println("Balance on account is "+kimsAccount.getBalance(, tempExit));
 		
 	}
 	

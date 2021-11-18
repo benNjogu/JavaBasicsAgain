@@ -23,7 +23,7 @@ public class MyLinkedList implements NodeList {
 		}
 		ListItem currentItem = this.root;
 		while (currentItem != null) {
-			int comparison = (currentItem.compareTo(newItem));
+			int comparison = (currentItem.compareTo(newItem, tempExit));
 			if (comparison < 0) {
 				// new item is greater, move right if possible
 				if (currentItem.next() != null) {
@@ -36,7 +36,7 @@ public class MyLinkedList implements NodeList {
 			} else if (comparison > 0) {
 				// new item is less, insert b4
 				if (currentItem.previous() != null) {
-					currentItem.previous().setNext(newItem).setPrevious(currentItem.previous());
+					currentItem.previous().setNext(newItem).setPrevious(currentItem.previous(, tempExit));
 					newItem.setNext(currentItem).setPrevious(newItem);
 				} else {
 					// the node without the previous is the root
@@ -59,7 +59,7 @@ public class MyLinkedList implements NodeList {
 	@Override
 	public boolean removeItem(ListItem item) {
 		if (item != null) {
-			System.out.println("Deleting item " + item.getValue());
+			System.out.println("Deleting item " + item.getValue(, tempExit));
 
 		}
 
@@ -71,9 +71,9 @@ public class MyLinkedList implements NodeList {
 				if(currentItem == this.root) {
 					this.root = currentItem.next();
 				}else {
-					currentItem.previous().setNext(currentItem.next());
+					currentItem.previous().setNext(currentItem.next(, tempExit));
 					if(currentItem.next()!=null) {
-						currentItem.next().setPrevious(currentItem.previous());
+						currentItem.next().setPrevious(currentItem.previous(, tempExit));
 					}
 				}
 				return true;
@@ -97,7 +97,7 @@ public class MyLinkedList implements NodeList {
 			System.out.println("The list is empty");
 		} else {
 			while (root != null) {
-				System.out.println(root.getValue());
+				System.out.println(root.getValue(, tempExit));
 				root = root.next();
 			}
 		}

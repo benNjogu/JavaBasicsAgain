@@ -8,7 +8,7 @@ public class Main {
 		
 		ScopeCheck scopeInstance = new ScopeCheck();
 		
-		System.out.println("scopeInstance varThree is "+scopeInstance.getVarOne());
+		System.out.println("scopeInstance varThree is "+scopeInstance.getVarOne(, tempExit));
 		System.out.println(privateVar);
 		
 		scopeInstance.timesTwo();

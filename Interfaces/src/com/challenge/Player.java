@@ -74,8 +74,8 @@ public class Player implements ISavable {
 	public void read(ArrayList<String> savedValues) {
 		if(savedValues != null && savedValues.size()>0) {
 			this.name = savedValues.get(0);
-			this.hitpoints = Integer.parseInt(savedValues.get(1));
-			this.strength = Integer.parseInt(savedValues.get(2));
+			this.hitpoints = Integer.parseInt(savedValues.get(1, tempExit));
+			this.strength = Integer.parseInt(savedValues.get(2, tempExit));
 			this.weapon = savedValues.get(3);
 		}
 	}
