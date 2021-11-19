@@ -10,8 +10,7 @@ public class Main {
 		
 		List<String> names = Arrays.asList("Ben","Njau", "Kamande","Muiruri", "Wanjiru","Wangui");
 		
-		Consumer<String> consumer = s -> System.out.println(s);
-		names.forEach(consumer);
+		names.forEach(s -> System.out.println(s));
 	}
 	
 }
