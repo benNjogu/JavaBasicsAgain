@@ -35,13 +35,7 @@ public class Main {
 		String str = "Faith Nyoko";
 		
 		MyPrinter mPrinter = new MyPrinter();
-		mPrinter.print(str, new Parser() {
-			
-			public String parse(String s) {
-				
-				return StringParser.convert(s);
-			}
-		});
+		mPrinter.print(str, s -> StringParser.convert(s));
 		
 	}
 	
