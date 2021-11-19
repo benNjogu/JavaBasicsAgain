@@ -10,14 +10,7 @@ public class Main {
 		
 		List<String> names = Arrays.asList("Ben","Njau", "Kamande","Muiruri", "Wanjiru","Wangui");
 		
-		Consumer<String> consumer = new Consumer<String>() {
-
-			@Override
-			public void accept(String s) {
-				System.out.println(s);
-			}
-			
-		};
+		Consumer<String> consumer = s -> System.out.println(s);
 		names.forEach(consumer);
 	}
 	
