@@ -8,7 +8,7 @@ interface Parser {
 
 class StringParser{
 	
-	public static String convert(String s) {
+	public String convert(String s) {
 		if (s.length()<=3) {
 			s = s.toUpperCase();
 		}else {
@@ -33,9 +33,9 @@ public class Main {
 	public static void main(String[] args) {
 
 		String str = "Faith Nyoko";
-		
+		StringParser sp = new StringParser();
 		MyPrinter mPrinter = new MyPrinter();
-		mPrinter.print(str, (StringParser::convert));
+		mPrinter.print(str, (sp::convert));
 		
 	}
 	
