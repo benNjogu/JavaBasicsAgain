@@ -35,7 +35,7 @@ public class Main {
 		String str = "Faith Nyoko";
 		
 		MyPrinter mPrinter = new MyPrinter();
-		mPrinter.print(str, s -> StringParser.convert(s));
+		mPrinter.print(str, StringParser::convert);
 		
 	}
 	
