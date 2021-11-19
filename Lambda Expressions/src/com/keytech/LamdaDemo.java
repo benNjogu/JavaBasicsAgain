@@ -17,11 +17,10 @@ public class LamdaDemo {
 
 	public static void main(String[] args) {
 		A a;
-		a = new A() { //using an anonymous inner class.
-			public void show() {
+		a = () -> {
 				System.out.println("Hello");
 			}
-		};
+		;
 		a.show();
 		
 	}
