@@ -17,10 +17,8 @@ public class LamdaDemo {
 
 	public static void main(String[] args) {
 		A a;
-		a = () -> {
-				System.out.println("Hello");
-			}
-		;
+		a = () -> System.out.println("Hello");	
+		
 		a.show();
 		
 	}
