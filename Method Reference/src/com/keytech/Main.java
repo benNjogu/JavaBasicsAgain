@@ -10,7 +10,7 @@ public class Main {
 		
 		List<String> names = Arrays.asList("Ben","Njau", "Kamande","Muiruri", "Wanjiru","Wangui");
 		
-		names.forEach(s -> System.out.println(s));
+		names.forEach(System.out::println);
 	}
 	
 }
