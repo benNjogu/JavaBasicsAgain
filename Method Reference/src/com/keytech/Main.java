@@ -35,6 +35,7 @@ public class Main {
 		String str = "Faith Nyoko";
 		StringParser sp = new StringParser();
 		MyPrinter mPrinter = new MyPrinter();
+		//passing a function to a function -> Higher Order functions
 		mPrinter.print(str, (sp::convert));
 		
 	}
