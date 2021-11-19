@@ -1,7 +1,7 @@
 package com.keytech;
 
 interface A{
-	void show();
+	void show(int i);
 }
 
 //class B implements A{
@@ -17,9 +17,9 @@ public class LamdaDemo {
 
 	public static void main(String[] args) {
 		A a;
-		a = () -> System.out.println("Hello");	
+		a = (int i) -> System.out.println("Hello "+i);	
 		
-		a.show();
+		a.show(6);
 		
 	}
 	
