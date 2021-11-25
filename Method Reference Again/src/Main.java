@@ -7,6 +7,12 @@ public class Main {
 		String[] nameArray = {"ben","basili","daagi","nyoko","chamigeigh","Kamjoro","cha pa"};
 		System.out.println(Arrays.asList(nameArray));
 		
+		//using for loop
+		for (String s : nameArray) {
+			System.out.println(s);
+		}
+		//using lambda expression
+		
 		
 	}
 
