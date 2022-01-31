@@ -16,18 +16,20 @@ public class Main {
 			BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			PrintWriter outPut = new PrintWriter(socket.getOutputStream(), true);
 
-			while(true) {
+			while (true) {
 				String echoString = input.readLine();
 				if (echoString.equals("exit")) {
 					break;
 				}
-				
-				outPut.println("Echo from server: "+echoString);
+
+				outPut.println("Echo from server: " + echoString);
 			}
-			
+
 		} catch (Exception e) {
-			System.out.println("Server exception "+e.getMessage());
+			System.out.println("Server exception " + e.getMessage());
 		}
 	}
 
+	// output after runnig client
+	// client connected
 }
