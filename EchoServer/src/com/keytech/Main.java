@@ -11,13 +11,19 @@ public class Main {
 	public static void main(String[] args) {
 		// Port number can be between 0 and 65535 inclusive
 		try (ServerSocket serverSocket = new ServerSocket(4000);) {
-			Socket socket = serverSocket.accept();
-			System.out.println("client connected");
-			BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			PrintWriter outPut = new PrintWriter(socket.getOutputStream(), true);
-
+			
 			while (true) {
+				Socket socket = serverSocket.accept();
+				System.out.println("client connected");
+				BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+				PrintWriter outPut = new PrintWriter(socket.getOutputStream(), true);
+				
 				String echoString = input.readLine();
+				try {
+					Thread.sleep(15000);
+				} catch (InterruptedException e) {
+					System.out.println("Thread interrupted");
+				}
 				if (echoString.equals("exit")) {
 					break;
 				}
