@@ -1,10 +1,6 @@
 package com.keytech;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
-import java.net.Socket;
 
 public class Main {
 
@@ -13,22 +9,12 @@ public class Main {
 		try (ServerSocket serverSocket = new ServerSocket(4000);) {
 			
 			while (true) {
-				Socket socket = serverSocket.accept();
-				System.out.println("client connected");
-				BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-				PrintWriter outPut = new PrintWriter(socket.getOutputStream(), true);
+				new Echoer(serverSocket.accept()).start();
 				
-				String echoString = input.readLine();
-				try {
-					Thread.sleep(15000);
-				} catch (InterruptedException e) {
-					System.out.println("Thread interrupted");
-				}
-				if (echoString.equals("exit")) {
-					break;
-				}
-
-				outPut.println("Echo from server: " + echoString);
+//				Socket socket = new ServerSocket().accept();
+//				Echoer echoer = new Echoer(socket);
+//				echoer.start();
+				
 			}
 
 		} catch (Exception e) {
