@@ -11,7 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// Address of the host(127.0.0.1) and port number
-		try (Socket socket = new Socket("localhost", 4000)) {
+		try (Socket socket = new Socket("127.0.0.1", 4000)) {
 			BufferedReader echoes = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			PrintWriter stringToEcho = new PrintWriter(socket.getOutputStream(), true);
 			Scanner scanner = new Scanner(System.in);
