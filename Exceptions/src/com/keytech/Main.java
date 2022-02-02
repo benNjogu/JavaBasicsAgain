@@ -1,15 +1,56 @@
 package com.keytech;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
 
-		int x = 98;
-		int y = 0;
+		// int x = 98;
+		// int y = 0;
+		//
+		// System.out.println(divideLBYL(x, y));
+		// System.out.println(divideEAFP(x, y));
+		// System.out.println(divide(x, y));
 
-		System.out.println(divideLBYL(x, y));
-		System.out.println(divideEAFP(x, y));
-		System.out.println(divide(x, y));
+		int x = getIntEAFP();
+		System.out.println("x is " + x);
+
+	}
+
+	private static int getInt() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter any number: ");
+		return scanner.nextInt();
+	}
+
+	private static int getIntLBYL() {
+		Scanner scanner = new Scanner(System.in);
+		boolean isValid = true;
+		System.out.println("Please enter an integer");
+		String input = scanner.next();
+		for (int i = 0; i < input.length(); i++) {
+			if (!Character.isDigit(input.charAt(i))) {
+				isValid = false;
+				break;
+			}
+		}
+		if (isValid) {
+			return Integer.parseInt(input);
+		}
+
+		return 0;
+	}
+
+	private static int getIntEAFP() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Please enter an integer ");
+		try {
+			return scanner.nextInt();
+		} catch (InputMismatchException e) {
+			return 0;
+		}
 	}
 
 	// Look Before You Leap
