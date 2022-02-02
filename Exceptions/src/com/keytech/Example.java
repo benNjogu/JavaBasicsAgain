@@ -11,7 +11,7 @@ public class Example {
 		try {
 			int result = divide();
 			System.out.println(result);
-		} catch (Exception e) {
+		} catch (ArithmeticException | NoSuchElementException e) {
 			System.out.println(e.toString());
 			System.out.println("Unable to put division, autopilot shutting down");
 		}
@@ -22,19 +22,19 @@ public class Example {
 		int x;
 		int y;
 
-		try {
+//		try {
 			x = getInt();
 			y = getInt();
 			System.out.println("x is " + x + ", y is " + y);
 			System.out.print("division is ");
 
 			return x / y;
-		} catch (NoSuchElementException e) {
-			throw new NoSuchElementException("no suitable input");
-		} catch (ArithmeticException e) {
-			throw new ArithmeticException("Attempt to divide by zero");
-
-		}
+//		} catch (NoSuchElementException e) {
+//			throw new NoSuchElementException("no suitable input");
+//		} catch (ArithmeticException e) {
+//			throw new ArithmeticException("Attempt to divide by zero");
+//
+//		}
 
 	}
 
