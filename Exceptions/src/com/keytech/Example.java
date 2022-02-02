@@ -7,30 +7,35 @@ import java.util.Scanner;
 public class Example {
 
 	public static void main(String[] args) {
-		int result = divide();
-		System.out.println(result);
+		
+		try {
+			int result = divide();
+			System.out.println(result);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			System.out.println("Unable to put division, autopilot shutting down");
+		}
+		
 	}
 
 	private static int divide() {
 		int x;
 		int y;
+
 		try {
 			x = getInt();
 			y = getInt();
-		} catch (NoSuchElementException e) {
-			throw new ArithmeticException("no suitable input");
-		}
+			System.out.println("x is " + x + ", y is " + y);
+			System.out.print("division is ");
 
-		
-		System.out.println("x is " + x + ", y is " + y);
-		System.out.print("division is ");
-		
-		try {
-			
+			return x / y;
+		} catch (NoSuchElementException e) {
+			throw new NoSuchElementException("no suitable input");
 		} catch (ArithmeticException e) {
 			throw new ArithmeticException("Attempt to divide by zero");
+
 		}
-		return x / y;
+
 	}
 
 	private static int getInt() {
