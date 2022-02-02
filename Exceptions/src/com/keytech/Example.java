@@ -1,5 +1,7 @@
 package com.keytech;
 
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Example {
@@ -10,28 +12,40 @@ public class Example {
 	}
 
 	private static int divide() {
-		int x = getInt();
-		int y = getInt();
+		int x;
+		int y;
+		try {
+			x = getInt();
+			y = getInt();
+		} catch (NoSuchElementException e) {
+			throw new ArithmeticException("no suitable input");
+		}
+
+		
 		System.out.println("x is " + x + ", y is " + y);
+		System.out.print("division is ");
+		
+		try {
+			
+		} catch (ArithmeticException e) {
+			throw new ArithmeticException("Attempt to divide by zero");
+		}
 		return x / y;
 	}
 
 	private static int getInt() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter an integer ");
+		while (true) {
+			try {
+				return scanner.nextInt();
+			} catch (InputMismatchException e) {
+				// go round again
+				scanner.nextLine();
+				System.out.println("please enter a number using the digits 0-9");
+			}
+		}
 
-		return scanner.nextInt();
 	}
-
-	/*
-	 * Exception in thread "main" java.util.InputMismatchException at
-	 * java.util.Scanner.throwFor(Scanner.java:864) at
-	 * java.util.Scanner.next(Scanner.java:1485) at
-	 * java.util.Scanner.nextInt(Scanner.java:2117) at
-	 * java.util.Scanner.nextInt(Scanner.java:2076) at
-	 * com.keytech.Example.getInt(Example.java:23) at
-	 * com.keytech.Example.divide(Example.java:14) at
-	 * com.keytech.Example.main(Example.java:8)
-	 */
 
 }
