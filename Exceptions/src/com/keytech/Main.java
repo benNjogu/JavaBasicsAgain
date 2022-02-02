@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Main {
 
+	/*Exception:- Something went wrong somewhere
+	 * */
 	public static void main(String[] args) {
 
 		// int x = 98;
