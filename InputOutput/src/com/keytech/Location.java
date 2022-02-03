@@ -5,13 +5,13 @@ import java.util.Map;
 
 public class Location {
 
-	private final int locationalId;
+	private final int locationId;
 	private final String description;
 	private final Map<String, Integer> exits;
 
 	public Location(int locationalId, String description, Map<String, Integer> exits) {
 		super();
-		this.locationalId = locationalId;
+		this.locationId = locationalId;
 		this.description = description;
 		
 		if (exits != null) {
@@ -26,8 +26,8 @@ public class Location {
 //		exits.put(direction, location);
 //	}
 	
-	public int getLocationalId() {
-		return locationalId;
+	public int getLocationId() {
+		return locationId;
 	}
 
 	public String getDescription() {
