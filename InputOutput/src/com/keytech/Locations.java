@@ -12,13 +12,16 @@ public class Locations implements Map<Integer, Location> {
 	private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
 
 	public static void main(String[] args) throws IOException {
-		try(FileWriter locFile = new FileWriter("locations.txt")) {
+		try(FileWriter locFile = new FileWriter("locations.txt");
+				FileWriter dirFile = new FileWriter("directions.txt")) {
 			for(Location location : locations.values()) {
-				locFile.write(location.getLocationalId()+","+location.getDescription()+"\n");
+				locFile.write(location.getLocationId()+","+location.getDescription()+"\n");
+				
+				for(String direction : location.getExits().keySet()) {
+					dirFile.write(location.getLocationId() + "," + direction + "," + location.getExits().get(direction)+"\n");
+				}
 			}
-		} catch (Exception e) {
-			
-		}
+		} 
 		
 //		FileWriter locFile = null;
 //		try {
