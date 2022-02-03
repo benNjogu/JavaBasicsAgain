@@ -1,6 +1,0 @@
-0,You are sitting in front of a computer learning java
-1,You are headed for a ride
-2,You are at the top of a hill
-3,You are moving sometime 
-4,You are on your way to school
-5,You are conversing with friends
