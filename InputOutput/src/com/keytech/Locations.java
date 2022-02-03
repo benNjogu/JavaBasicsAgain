@@ -56,6 +56,8 @@ public class Locations implements Map<Integer, Location> {
 				scanner.skip(scanner.delimiter());
 				String description = scanner.nextLine();
 				System.out.println("Imported loc: " + loc + ": " + description);
+				Map<String, Integer> tempExit = new HashMap<>();
+				locations.put(loc, new Location(loc, description, tempExit));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
