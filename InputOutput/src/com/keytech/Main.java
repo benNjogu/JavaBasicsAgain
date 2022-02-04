@@ -10,7 +10,7 @@ public class Main {
 	private static Locations locations = new Locations();
 
 	public static void main(String[] args) {
-		
+
 		Map<String, String> vocabulary = new HashMap<String, String>();
 		vocabulary.put("QUIT", "Q");
 		vocabulary.put("NORTH", "N");
@@ -33,9 +33,9 @@ public class Main {
 			System.out.println();
 
 			String direction = scanner.nextLine().toUpperCase();
-			if (direction.length()>1) {
+			if (direction.length() > 1) {
 				String[] words = direction.split(" ");
-				for(String word: words) {
+				for (String word : words) {
 					if (vocabulary.containsKey(word)) {
 						direction = vocabulary.get(word);
 						break;
