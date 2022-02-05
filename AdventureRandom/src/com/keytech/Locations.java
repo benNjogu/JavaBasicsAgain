@@ -1,38 +1,65 @@
 package com.keytech;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InvalidClassException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.RandomAccessFile;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.Set;
 
 public class Locations implements Map<Integer, Location> {
 
 	private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
+	private static Map<Integer, IndexRecord> index = new LinkedHashMap<>();
 
 	public static void main(String[] args) throws IOException {
 
-		try (ObjectOutputStream locFile = new ObjectOutputStream(
-				new BufferedOutputStream(new FileOutputStream("locations.dat")))) {
+		try (RandomAccessFile rao = new RandomAccessFile("locations_rand.dat", "rwd")) {
 
-			for (Location location : locations.values()) {
-				locFile.writeObject(location);
+			/**
+			 * 1. The first four bytes will contain the number of locations(bytes 0-3)
+			 * 2. The next four bytes will contain the start offset of the locations section(bytes 4-7)
+			 * 3. The next section of the file will contain the index(the index is 1692 bytes long).bytes 8-69 
+			 * 4. The final section of the file will contain the location records(the data). it will start at 1700
+			 * */
+			
+			rao.writeInt(locations.size());
+			//locationId, offset and length hence multiply by 3.
+			int indexSize = locations.size() * 3 * Integer.BYTES;
+			int locationStart = (int) (indexSize + rao.getFilePointer() + Integer.BYTES);
+			rao.writeInt(locationStart);
+			
+			long indexStart = rao.getFilePointer();
+			
+			int startPointer = locationStart;
+			rao.seek(startPointer);
+			
+			for(Location location : locations.values()) {
+				rao.writeInt(location.getLocationId());
+				rao.writeUTF(location.getDescription());
+				StringBuilder builder =  new StringBuilder();
+				for(String direction : location.getExits().keySet()) {
+					if (!direction.equalsIgnoreCase("Q")) {
+						builder.append(direction);
+						builder.append(",");
+						builder.append(location.getExits().get(direction));
+						builder.append(",");
+					}
+				}
+				
+				rao.writeUTF(builder.toString());
+				
+				IndexRecord record = new IndexRecord(startPointer, (int) rao.getFilePointer() - startPointer);
+				index.put(location.getLocationId(), record);
+				startPointer = (int) rao.getFilePointer();
 			}
+			
 		}
 
 	}
