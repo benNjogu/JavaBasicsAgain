@@ -1,5 +1,6 @@
 package com.keytech;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -9,7 +10,7 @@ public class Main {
 	private static Scanner scanner = new Scanner(System.in);
 	private static Locations locations = new Locations();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		Map<String, String> vocabulary = new HashMap<String, String>();
 		vocabulary.put("QUIT", "Q");
@@ -18,14 +19,16 @@ public class Main {
 		vocabulary.put("WEST", "W");
 		vocabulary.put("EAST", "E");
 
-		int loc = 1;
+		//int loc = 64;
+		Location currentLocation = locations.getLocation(64); 
+				
 		while (true) {
-			System.out.println(locations.get(loc).getDescription());
-			if (loc == 0) {
+			System.out.println(currentLocation.getDescription());
+			if (currentLocation.getLocationId() == 0) {
 				break;
 			}
 
-			Map<String, Integer> exits = locations.get(loc).getExits();
+			Map<String, Integer> exits = currentLocation.getExits();
 			System.out.print("Available exits are ");
 			for (String exit : exits.keySet()) {
 				System.out.print(exit + ", ");
@@ -45,7 +48,7 @@ public class Main {
 
 			if (exits.containsKey(direction)) {
 
-				loc = exits.get(direction);
+				currentLocation = locations.getLocation(currentLocation.getExits().get(direction));
 			} else {
 
 				System.out.println("You cannot go in that direction");
@@ -53,6 +56,7 @@ public class Main {
 
 		}
 
+		locations.close();
 	}
 
 }
