@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class Locations implements Map<Integer, Location> {
 
-	private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
+	private static Map<Integer, Location> locations = new LinkedHashMap<Integer, Location>();
 	private static Map<Integer, IndexRecord> index = new LinkedHashMap<>();
 
 	public static void main(String[] args) throws IOException {
@@ -58,6 +58,13 @@ public class Locations implements Map<Integer, Location> {
 				IndexRecord record = new IndexRecord(startPointer, (int) rao.getFilePointer() - startPointer);
 				index.put(location.getLocationId(), record);
 				startPointer = (int) rao.getFilePointer();
+			}
+			
+			rao.seek(indexStart);
+			for (Integer locationId : index.keySet()) {
+				rao.write(locationId);
+				rao.write(index.get(locationId).getStartByte());
+				rao.write(index.get(locationId).getLength());
 			}
 			
 		}
