@@ -9,8 +9,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		try {
-			URI uri = new URI("http://username:password@myserver.com:5000/catalogue/phone?os=android#samsung");
-			URL url = uri.toURL();
+//			URI uri = new URI("http://username:password@myserver.com:5000/catalogue/phone?os=android#samsung");
+			URI baseUri = new URI("http://username:password@myserver.com:5000");
+			URI uri = new URI("/catalogue/phone?os=android#samsung");
+			URI resolvedUri = baseUri.resolve(uri);
+			URL url = resolvedUri.toURL();
 			System.out.println(url);
 			
 //			System.out.println("Scheme = " + uri.getScheme());
