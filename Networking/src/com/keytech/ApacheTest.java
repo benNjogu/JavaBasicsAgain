@@ -12,38 +12,33 @@ import org.apache.hc.client5.http.impl.classic.HttpClients;
 
 public class ApacheTest {
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) throws IOException {
+
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpGet request = new HttpGet("http://example.org");
 		request.addHeader("User-Agent", "Chrome");
-		
-		CloseableHttpResponse response = null;
+
+		CloseableHttpResponse response = httpClient.execute(request);
 		try {
 
-			response = httpClient.execute(request);
 			System.out.println("response code = " + response.getCode());
-			
-			BufferedReader inputReader = new BufferedReader
-					(new InputStreamReader(response.getEntity().getContent()));
-			
+
+			BufferedReader inputReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
 			String line;
 			while ((line = inputReader.readLine()) != null) {
 				System.out.println(line);
 			}
 
 			inputReader.close();
-			
+
 		} catch (IOException e) {
 			System.out.println("IOException " + e.getMessage());
-		}finally {
-			try {
-				response.close();
-			} catch (IOException e2) {
-				System.out.println("IOException " + e2.getMessage());
-			}
+		} finally {
+			response.close();
+
 		}
-		
+
 	}
-	
+
 }
