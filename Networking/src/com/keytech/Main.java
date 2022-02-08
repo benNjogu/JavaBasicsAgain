@@ -21,10 +21,17 @@ public class Main {
 			
 			URL url1 = resolvedUri1.toURL();
 			System.out.println("url 1 = " + url1);
+			//url 1 = http://username:password@mynewserver.com:5000/catalogue/phone?os=android#samsung
 			URL url2 = resolvedUri2.toURL();
 			System.out.println("url 2 = " + url2);
+			//url 2 = http://username:password@mynewserver.com:5000/catalogue/tvs?manufacturer=samsung
 			URL url3 = resolvedUri3.toURL();
 			System.out.println("url 3 = " + url3);
+			//url 3 = http://username:password@mynewserver.com:5000/stores/locations/?zip=12345
+			
+			URI relativizedUri = baseUri.relativize(resolvedUri2);
+			System.out.println("Relative URI = " + relativizedUri);
+			//Relative URI = catalogue/tvs?manufacturer=samsung
 	
 		} catch (URISyntaxException e) {
 			System.out.println("Uri bad syntax: " + e.getMessage());
