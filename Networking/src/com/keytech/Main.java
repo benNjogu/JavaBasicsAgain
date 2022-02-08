@@ -14,7 +14,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		try {
-			URL url = new URL("http://example.org/somepage.html");//Response code = 404. Error reading webpage
+			URL url = new URL("https://www.flickr.com/services/feeds/photos_public.gne?tags=dogs");
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
 			connection.addRequestProperty("User-Agent", "Chrome");
@@ -24,7 +24,7 @@ public class Main {
 			System.out.println("Response code = " + responseCode);
 			if (responseCode != 200) {
 				System.out.println("Error reading webpage");
-				System.out.println(connection.getResponseMessage());//Not Found
+				System.out.println(connection.getResponseMessage());
 				return;
 			}
 			
