@@ -24,6 +24,7 @@ public class Main {
 			System.out.println("Response code = " + responseCode);
 			if (responseCode != 200) {
 				System.out.println("Error reading webpage");
+				System.out.println(connection.getResponseMessage());//Not Found
 				return;
 			}
 			
