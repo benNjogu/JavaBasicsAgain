@@ -30,6 +30,14 @@ public class Main {
 					System.out.println("value = " + string);
 				}
 			}
+			
+//			String line = "";
+//			while (line != null) {
+//				line = inputStream.readLine();
+//				System.out.println(line);
+//			}
+//
+//			inputStream.close();
 
 		} catch (IOException e) {
 			System.out.println("IOException " + e.getMessage());
